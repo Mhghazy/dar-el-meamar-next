@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { assets } from '@/lib/assets/assetFacade';
+
 
 interface ProjectModalProps {
   project: any | null;
@@ -47,7 +49,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, t }) => {
             <div className="relative mb-6 flex items-center justify-center">
               <motion.img
                 key={currentIndex}
-                src={project.images[currentIndex]}
+                src={assets.resolveUrl(project.images[currentIndex])}
                 alt={`${project.title} ${currentIndex + 1}`}
                 className="w-full h-64 object-cover rounded-md"
                 initial={{ opacity: 0, scale: 0.95 }}

@@ -6,6 +6,7 @@ import { Building2 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { PROJECTS_EXTRA } from '../../config/projectsExtra';
 import ProjectModal from './Modal/ProjectModal';
+import { assets } from '@/lib/assets/assetFacade';
 
 const GalleryProjects: React.FC = () => {
   const { t } = useLanguage();
@@ -41,7 +42,7 @@ const GalleryProjects: React.FC = () => {
               <div className={`relative h-64 bg-gradient-to-br ${project.color} overflow-hidden`}>
                 {project.image ? (
                   <motion.img
-                    src={project.image}
+                    src={assets.resolveUrl(project.image)}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     initial={{ scale: 1 }}

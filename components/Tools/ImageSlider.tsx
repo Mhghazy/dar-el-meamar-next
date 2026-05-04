@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { assets } from '@/lib/assets/assetFacade';
+
 
 type ImageSliderProps = {
   images: string[];
@@ -68,7 +70,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
       <AnimatePresence initial={false} mode="wait">
         <motion.img
           key={index} // مفتاح ثابت لكل صورة
-          src={images[index]}
+          src={assets.resolveUrl(images[index])}
           alt=""
           loading={index === 0 ? 'eager' : 'lazy'}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"

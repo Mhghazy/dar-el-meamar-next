@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { scaleIn, staggerContainer } from '../../utils/animations';
 import { useLanguage } from '../../context/LanguageContext';
 import PERSON_IMAGES from '../../config/personImages';
+import { assets } from '@/lib/assets/assetFacade';
+
 
 
 
@@ -42,7 +44,7 @@ const AboutTeam: React.FC = () => {
               >
                 <div className="bg-teal-100 dark:bg-teal-900 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
                   <img
-                    src={PERSON_IMAGES[index % PERSON_IMAGES.length] || member.image}
+                    src={assets.resolveUrl(PERSON_IMAGES[index % PERSON_IMAGES.length] || member.image)}
                     alt={member.name}
                     className="w-24 h-24 rounded-full object-cover border-4 border-teal-100 dark:border-teal-900" />
                 </div>

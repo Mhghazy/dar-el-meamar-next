@@ -8,13 +8,13 @@ export function proxy(request: NextRequest) {
   // const { data: { session } } = await supabase.auth.getSession();
   
   // For now, use a mock auth flag
-  const isDashboardRoute = request.nextUrl.pathname.startsWith('/dar-el-meamar-landing/dashboard');
+  const isDashboardRoute = request.nextUrl.pathname.startsWith('/dar-el-meamar-next/dashboard');
 
   if (isDashboardRoute) {
     const isMockAuthEnabled = process.env.NEXT_PUBLIC_MOCK_AUTH === 'true';
     if (!isMockAuthEnabled) {
       // Redirect to login or home if not authenticated
-      return NextResponse.redirect(new URL('/dar-el-meamar-landing', request.url));
+      return NextResponse.redirect(new URL('/dar-el-meamar-next', request.url));
     }
   }
 

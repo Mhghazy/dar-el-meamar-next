@@ -2,7 +2,7 @@
  * Pure URL resolution for public assets (Strategy-style decomposition).
  * Single source of truth for basePath + asset folder rules.
  */
-const ASSET_BASE_PATH = '/dar-el-meamar-landing';
+const ASSET_BASE_PATH = '/dar-el-meamar-next';
 
 export function isExternalImagePath(path: string): boolean {
   return path.startsWith('http');
